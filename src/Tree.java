@@ -1,6 +1,8 @@
 public class Tree {
     Node root;
+    public Tree() {
 
+    }
     public Tree(Node root) {
         this.root = root;
     }
