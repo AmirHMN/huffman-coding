@@ -1,7 +1,7 @@
 public class Huffman {
     static Queue tree = new Queue();
 
-    public static void createQueue(String s) {
+    private static void createQueue(String s) {
         int[] count = new int[256];
 
         int len = s.length();
@@ -16,14 +16,15 @@ public class Huffman {
                 tree.enqueue(new Tree(concat, count[i]));
             }
         }
-
-        //test print
-//        for (int i = 0; i < tree.lastIndex; i++) {
-//            System.out.println(tree.element[i].root.concat + " " + tree.element[i].root.count);
-//        }
     }
 
-//    static void huffmanCoding() {
-//
-//    }
+    static Tree huffmanCoding(String s) {
+        createQueue(s);
+        while(tree.lastIndex>1){
+            Tree p= tree.dequeue();
+            Tree q= tree.dequeue();
+            tree.enqueue(Tree.concatTree(p,q));
+        }
+        return tree.dequeue();
+    }
 }

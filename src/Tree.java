@@ -19,10 +19,17 @@ public class Tree {
         root.right = newTree.root;
     }
 
-    public Tree concatTree(Tree t1, Tree t2) {
+    public static Tree concatTree(Tree t1, Tree t2) {
         Tree res = new Tree(t1.root.concat + t2.root.concat, t1.root.count + t2.root.count);
         res.addLeft(t1);
         res.addRight(t2);
         return res;
+    }
+
+    @Override
+    public String toString() {
+        return "Tree{" +
+                "root=" + root +
+                '}';
     }
 }
