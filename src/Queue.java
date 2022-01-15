@@ -1,11 +1,19 @@
 public class Queue {
     Tree[] queue = new Tree[10];
-    int lastLast=0;
+    int lastIndex=0;
 
-   public void add(Tree tree){
-
+   public void enqueue(Tree tree){
+       queue[lastIndex] = tree;
+       lastIndex++;
+        sort();
    }
-   public void sort(){
+   public Tree dequeue(){
+       Tree res = queue[lastIndex - 1];
+       queue[lastIndex - 1] = null;
+       lastIndex--;
+       return res;
+   }
+   private void sort(){
        int n = queue.length;
        for (int i = 1; i < n; ++i) {
            Tree key = queue[i];
