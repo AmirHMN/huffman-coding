@@ -20,7 +20,7 @@ public class Tree {
     }
 
     public static Tree concatTree(Tree t1, Tree t2) {
-        Tree res = new Tree(t1.root.concat + t2.root.concat, t1.root.count + t2.root.count);
+        Tree res = new Tree(t1.root.character + t2.root.character, t1.root.count + t2.root.count);
         res.addLeft(t1);
         res.addRight(t2);
         return res;
@@ -28,8 +28,6 @@ public class Tree {
 
     @Override
     public String toString() {
-        return "Tree{" +
-                "root=" + root +
-                '}';
+     return "";
     }
 }

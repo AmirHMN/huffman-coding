@@ -1,11 +1,11 @@
 public class Node {
-    String concat;
+    String character;
     int count;
     Node left;
     Node right;
 
     public Node(String concat, int count) {
-        this.concat = concat;
+        this.character = concat;
         this.count = count;
         this.left = null;
         this.right = null;

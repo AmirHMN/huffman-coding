@@ -1,5 +1,5 @@
 public class Queue {
-    Tree[] element = new Tree[30];
+    Tree[] element = new Tree[32];
     int lastIndex=0;
 
     public Queue() {
@@ -11,7 +11,7 @@ public class Queue {
     public void enqueue(Tree tree){
        element[lastIndex] = tree;
        lastIndex++;
-        sort();
+        insertionSort();
    }
    public Tree dequeue(){
        Tree res = element[lastIndex - 1];
@@ -19,7 +19,7 @@ public class Queue {
        lastIndex--;
        return res;
    }
-   private void sort(){
+   private void insertionSort(){
        int n = lastIndex;
        for (int i = 1; i < n; ++i) {
            Tree key = element[i];
